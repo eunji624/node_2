@@ -1,7 +1,7 @@
 {
-  "trailingComma": "es5",  //객체나 배열 같은 유효한 곳에서 콤마 허용. 
-  "tabWidth": 2,   //탭 너비
-  "semi": false,   //세미클론 사용여부
-  "singleQuote": true,  //작은따옴표 쓰게하겠음
-  "printWidth": 120 //줄바꿈에 관한. 글길이 지정
+  "trailingComma": "es5",
+  "tabWidth": 2,
+  "semi": false,
+  "singleQuote": true,
+  "printWidth": 120
 }

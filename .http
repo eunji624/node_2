@@ -1,24 +1,107 @@
-###
 
 
-###게시글 작성하기
-POST http://localhost:3002/api/product
-Content-Type: application/json;
+### 회원가입기능
+
+POST http://localhost:3007/auth/signup HTTP/1.q
+Content-Type: application/json
 
 {
-  "productName" : "에어팟 프로1",
-  "author" : "팬파인애플애플팬",
-  "content" : "1년쓴 에어팟 프로1 팔아요",
-  "pwd" : "2323",
+  "email" : "tttpopeiu@naver.com",
+  "password" : "0101010101",
+  "passwordRE" : "0101010101",
+  "name" : "ttt넷플릭스두둥"
 }
 
 
 
-###
+# 
+### 회원로그인 기능
 
-#/로 확인
-GET http://localhost:3002/
-Content-Type: application/json;
+POST http://localhost:3007/auth/login HTTP/1.q
+Content-Type: application/json
+
+{
+  "email" : "ppopeiu@naver.com",
+  "password" : "0101010101"
+}
 
 
-###
+
+
+
+###회원 정보 조회
+
+
+GET http://localhost:3007/auth/info HTTP/1.q
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdXRob3JpemF0aW9uIjozLCJpYXQiOjE2OTk5NjY0MTcsImV4cCI6MTcwMDU3MTIxN30.i-NJIBTIjADuklqWjhSQ66POSIuxiVp1qe8bh65OVa0
+Content-Type: application/json
+
+
+
+
+
+###상품 생성
+
+POST http://localhost:3007/api/product HTTP/1.q
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdXRob3JpemF0aW9uIjo2LCJpYXQiOjE2OTk5NzExOTIsImV4cCI6MTcwMDAxNDM5Mn0.AaEf1pCd0oMG87qYB5xDlcW_KLe632DsxTDyxPOYSlk
+Content-Type: application/json
+
+{
+  "productName" : "감귤 팔아요 1kg",
+  "comment" : "귤 제주감귤! 얼마나 맛있게요~~~~",
+  "price" : 10000
+}
+
+
+
+
+
+
+###상품 리스트 조회(쿼리스트링 정렬)
+
+GET http://localhost:3007/api/product HTTP/1.q
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdXRob3JpemF0aW9uIjoyLCJpYXQiOjE2OTk5NDg4NTYsImV4cCI6MTcwMDU1MzY1Nn0.QbOTQME1mIv7Slrg7PDQYMOnJxLs4WimMi4l_OtMxWw
+Content-Type: application/json
+
+
+
+
+
+
+###상품 상세 조회
+
+GET http://localhost:3007/api/product/8 HTTP/1.q
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdXRob3JpemF0aW9uIjoyLCJpYXQiOjE2OTk5NDg4NTYsImV4cCI6MTcwMDU1MzY1Nn0.QbOTQME1mIv7Slrg7PDQYMOnJxLs4WimMi4l_OtMxWw
+Content-Type: application/json
+
+
+
+
+
+
+###상품 수정
+
+PATCH http://localhost:3007/api/product/8 HTTP/1.q
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdXRob3JpemF0aW9uIjoyLCJpYXQiOjE2OTk5NDg4NTYsImV4cCI6MTcwMDU1MzY1Nn0.QbOTQME1mIv7Slrg7PDQYMOnJxLs4WimMi4l_OtMxWw
+Content-Type: application/json
+
+
+{
+  "productName" : "33에어팟_ 판매 완료",
+  "comment" : "33깨끗하게 사용. 판매 완료",
+  "price" : 100000,
+  "status" : "SOLD_OUT"
+}
+
+
+
+
+###상품 삭제
+
+DELETE http://localhost:3007/api/product/11 HTTP/1.q
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdXRob3JpemF0aW9uIjozLCJpYXQiOjE2OTk5Nzc2MTgsImV4cCI6MTcwMDAyMDgxOH0.gVJZFwddIZSXm3vxNmKnebrGh2M0wRqgZD2JBF77Hdk
+Content-Type: application/json
+
+
+
+
