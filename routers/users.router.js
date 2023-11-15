@@ -50,7 +50,7 @@ router.post('/login', async (req, res, next) => {
 
   //입력한 이메일 값과 같은 유저 데이터 찾기
   const loginUserData = await UsersData.findOne({ where: { email } })
-  // console.log(loginUserData)
+  console.log(loginUserData.id)
 
   if (!loginUserData) {
     return res.status(404).json({ message: '존재하지 않는 회원입니다. 회원가입을 해주세요.' })

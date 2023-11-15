@@ -7,6 +7,7 @@ const { UsersData } = require('../models')
 async function middleware(req, res, next) {
   //Authorization" 헤더로 전달받는 토큰 가져오기
   // const token = req.headers["authorization"] 이런식으로도 사용 가능.
+  console.log('헤더헤더=>', req.headers)
   const { authorization } = req.headers
   // console.log('auth=> ', req.headers)
   const [authType, authToken] = authorization.split(' ')

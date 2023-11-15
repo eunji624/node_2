@@ -1,4 +1,8 @@
 {
+  "scripts": {
+    "dev": "nodemon app.js",
+    "which": "which nodemon"
+  },
   "dependencies": {
     "bcrypt": "^5.1.1",
     "cookie-parser": "^1.4.6",

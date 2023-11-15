@@ -29,11 +29,15 @@ Content-Type: application/json
 
 
 
+
+
+
+
 ###회원 정보 조회
 
 
 GET http://localhost:3007/auth/info HTTP/1.q
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdXRob3JpemF0aW9uIjozLCJpYXQiOjE2OTk5NjY0MTcsImV4cCI6MTcwMDU3MTIxN30.i-NJIBTIjADuklqWjhSQ66POSIuxiVp1qe8bh65OVa0
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdXRob3JpemF0aW9uIjozLCJpYXQiOjE3MDAwMTA1OTQsImV4cCI6MTcwMDA1Mzc5NH0.yWzkxnYF6Eia43VCyszriO_Zi3YT-OJH6Q3D5ULB6Cs
 Content-Type: application/json
 
 
@@ -43,13 +47,13 @@ Content-Type: application/json
 ###상품 생성
 
 POST http://localhost:3007/api/product HTTP/1.q
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdXRob3JpemF0aW9uIjo2LCJpYXQiOjE2OTk5NzExOTIsImV4cCI6MTcwMDAxNDM5Mn0.AaEf1pCd0oMG87qYB5xDlcW_KLe632DsxTDyxPOYSlk
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdXRob3JpemF0aW9uIjozLCJpYXQiOjE3MDAwMjU0NjAsImV4cCI6MTcwMDA2ODY2MH0.1Fqc2asBO9bAruV12EeZfzgrn9-lP1_FGdlymGoOByw
 Content-Type: application/json
 
 {
-  "productName" : "감귤 팔아요 1kg",
-  "comment" : "귤 제주감귤! 얼마나 맛있게요~~~~",
-  "price" : 10000
+  "productName" : "네스프레소 에센자 미니",
+  "comment" : "집에서 드립커피 내려먹어서 팔아요",
+  "price" : 50000
 }
 
 
@@ -60,7 +64,7 @@ Content-Type: application/json
 ###상품 리스트 조회(쿼리스트링 정렬)
 
 GET http://localhost:3007/api/product HTTP/1.q
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdXRob3JpemF0aW9uIjoyLCJpYXQiOjE2OTk5NDg4NTYsImV4cCI6MTcwMDU1MzY1Nn0.QbOTQME1mIv7Slrg7PDQYMOnJxLs4WimMi4l_OtMxWw
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdXRob3JpemF0aW9uIjozLCJpYXQiOjE3MDAwMTA1OTQsImV4cCI6MTcwMDA1Mzc5NH0.yWzkxnYF6Eia43VCyszriO_Zi3YT-OJH6Q3D5ULB6Cs
 Content-Type: application/json
 
 
@@ -70,8 +74,8 @@ Content-Type: application/json
 
 ###상품 상세 조회
 
-GET http://localhost:3007/api/product/8 HTTP/1.q
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdXRob3JpemF0aW9uIjoyLCJpYXQiOjE2OTk5NDg4NTYsImV4cCI6MTcwMDU1MzY1Nn0.QbOTQME1mIv7Slrg7PDQYMOnJxLs4WimMi4l_OtMxWw
+GET http://localhost:3007/api/product/15 HTTP/1.q
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdXRob3JpemF0aW9uIjozLCJpYXQiOjE3MDAwMjU0NjAsImV4cCI6MTcwMDA2ODY2MH0.1Fqc2asBO9bAruV12EeZfzgrn9-lP1_FGdlymGoOByw
 Content-Type: application/json
 
 
@@ -82,15 +86,15 @@ Content-Type: application/json
 
 ###상품 수정
 
-PATCH http://localhost:3007/api/product/8 HTTP/1.q
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdXRob3JpemF0aW9uIjoyLCJpYXQiOjE2OTk5NDg4NTYsImV4cCI6MTcwMDU1MzY1Nn0.QbOTQME1mIv7Slrg7PDQYMOnJxLs4WimMi4l_OtMxWw
+PATCH http://localhost:3007/api/product/15 HTTP/1.q
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdXRob3JpemF0aW9uIjozLCJpYXQiOjE3MDAwMjU0NjAsImV4cCI6MTcwMDA2ODY2MH0.1Fqc2asBO9bAruV12EeZfzgrn9-lP1_FGdlymGoOByw
 Content-Type: application/json
 
 
 {
-  "productName" : "33에어팟_ 판매 완료",
-  "comment" : "33깨끗하게 사용. 판매 완료",
-  "price" : 100000,
+  "productName" : "수정_네스프레소 에센자 미니",
+  "comment" : "수정_판매 완료",
+  "price" : 40000,
   "status" : "SOLD_OUT"
 }
 
@@ -99,8 +103,8 @@ Content-Type: application/json
 
 ###상품 삭제
 
-DELETE http://localhost:3007/api/product/11 HTTP/1.q
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdXRob3JpemF0aW9uIjozLCJpYXQiOjE2OTk5Nzc2MTgsImV4cCI6MTcwMDAyMDgxOH0.gVJZFwddIZSXm3vxNmKnebrGh2M0wRqgZD2JBF77Hdk
+DELETE http://localhost:3007/api/product/14 HTTP/1.q
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdXRob3JpemF0aW9uIjozLCJpYXQiOjE3MDAwMjU0NjAsImV4cCI6MTcwMDA2ODY2MH0.1Fqc2asBO9bAruV12EeZfzgrn9-lP1_FGdlymGoOByw
 Content-Type: application/json
 
 
